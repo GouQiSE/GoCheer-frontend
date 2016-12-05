@@ -1,0 +1,12 @@
+.jumbotron {
+    background-image: url("/images/login_bg.png");
+    background-size: cover;
+    height: 400px;
+    margin-bottom:0;
+}
+.jumbotron .container{
+    margin:0;
+    height:inherit;
+    background-color: rgba(243, 243, 243, 0.5);
+    padding:0;
+}
