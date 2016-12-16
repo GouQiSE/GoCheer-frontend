@@ -1,7 +1,11 @@
-#bg{
+#jb1{
     height:450px;
     background-color: sandybrown;
     background-image: url("../images/jb1.png");
+}
+
+#jb2{
+    height:450px;
 }
 
 .btn{
