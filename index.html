@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>枸杞-主页</title>
+
+    <!--设置网页图标-->
+    <link rel="shortcut icon" href="images/logo.png" type=”image/x-icon”/>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
 </head>
 <body>
+<div id="bg">
+    <button type="button" class="btn btn-default">Download GoCheer</button>
+</div>
+
+
+
+
+
+<script>
+    function changeBg(){
+        var bg=document.getElementById("bg");
+        var rand=Math.round(Math.random()*10000);
+        bg.style.backgroundColor="#FF"+rand;
+    }
+    setInterval("changeBg();",5000);
+</script>
 
 </body>
 </html>
