@@ -1,0 +1,26 @@
+.badge-male{
+    color: #ffffff;
+    background-color: #428bca;
+}
+.badge-female{
+    color: #ffffff;
+    background-color:#ce8483;
+}
+.table-score{
+
+}
+.table-score > thead > tr > th {
+    border-bottom: 0.1px solid #ffffff;
+    text-align: center;
+    font-size: 20px;
+    vertical-align: bottom;
+}
+.table-score> tbody > tr > td{
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.label-success{
+    background-color:#3c763d;
+}
