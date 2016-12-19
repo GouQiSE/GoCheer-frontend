@@ -1,0 +1,30 @@
+.avatar{
+    text-align: center;
+}
+.number-top{
+    font-size: 45px;
+    color: #d58512;
+}
+.number{
+    font-size: 45px;
+}
+.suffix-top{
+    font-size: 20px;
+    color: #f0ad4e;
+}
+.suffix{
+    font-size: 20px;
+    color: #737373;
+}
+.name-top{
+    color: #d58512;
+    font-weight: bold;
+}
+.panel-body-top{
+    background-color:#f5e79e;
+    color:#d58512;
+
+}
+.panel-body{
+    color: #3c3c3c;
+}
