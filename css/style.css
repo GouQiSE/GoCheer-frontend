@@ -1,30 +1,10 @@
-@charset "utf-8";
-body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, textarea, form, select, fieldset, table, td, div, input {
-    margin: 0;
-    padding: 0;
-    -webkit-text-size-adjust: none
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 12px;
-    font-weight: normal
-}
-
-body > div {
-    margin: 0 auto
-}
 
 div {
+    margin: 0px;
     text-align: left
 }
 
-a img {
-    border: 0
-}
-
 body {
-    color: #333;
-    text-align: center;
     font: 12px "微软雅黑";
 }
 
@@ -60,7 +40,6 @@ ul, ol, li {
     display: block;
     width: 111px;
     height: 48px;
-    font-family: "微软雅黑", "宋体";
     font-size: 14px;
     text-decoration: none;
     cursor: pointer;
@@ -83,8 +62,7 @@ ul, ol, li {
 }
 
 #menu2 {
-    background-image: url(../images/s_03.jpg);
-    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.72);
 }
 
 #menu2 ul li a {
@@ -95,10 +73,10 @@ ul, ol, li {
     color: #FFF;
     height: 48px;
     width: 111px;
-    background-image: url(../images/w_03.jpg);
-    background-repeat: repeat;
+    background-color: darkorange;
 }
 
 .y-right{
     float: right!important;
 }
+

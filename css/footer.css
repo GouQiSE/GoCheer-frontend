@@ -1,5 +1,8 @@
 .footer{
-    padding-top:30px;
+    padding-top:50px;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.72);
+    color: white;
 }
 
 .footer h1{
@@ -8,5 +11,4 @@
 
 .footer a{
     text-decoration: none;
-    color: #453f5c;
 }
