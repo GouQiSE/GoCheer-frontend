@@ -24,8 +24,9 @@
         <form class="form-horizontal" role="form">
             <div class="form-group">
                 <label for="inputUsername3" class="col-md-4 control-label">Username</label>
-                <div class="col-md-4">
-                    <input type="username" class="form-control" id="inputUsername3" placeholder="Username">
+                <div class="col-md-4" style="float: left">
+                    <input type="username" class="form-control" id="inputUsername3" placeholder="Username" onblur="checkUsername()">
+                    <span id="warning3"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -39,7 +40,7 @@
                 <div class="col-md-4">
                     <input type="password" class="form-control" id="inputConfirm3" placeholder="Confirm Password"
                            onblur="check()">
-                    <span id="warning">   </span>
+                    <span id="warning"></span>
                 </div>
             </div>
 
@@ -58,7 +59,8 @@
             <div class="form-group">
                 <label for="inputNickname3" class="col-md-4 control-label">Nickname</label>
                 <div class="col-md-4">
-                    <input type="name" class="form-control" id="inputNickname3" placeholder="Nickname">
+                    <input type="name" class="form-control" id="inputNickname3" placeholder="Nickname" onblur="checkNickname()">
+                    <span id="warning2"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -68,7 +70,7 @@
                 </div>
             </div>
 
-            <div class="header">
+            <div style="text-align: center">
                 <span><button type="submit" class="btn btn-default">Sign up</button></span>
             </div>
         </form>
@@ -80,11 +82,74 @@
     function check() {
         if (document.getElementById("inputPassword3").value !=
                 document.getElementById("inputConfirm3").value) {
-            document.getElementById("warning").innerHTML = "   两次密码的输入不一致";
+            document.getElementById("warning").innerHTML = "两次密码的输入不一致";
         } else {
             document.getElementById("warning").innerHTML = "   ";
         }
     }
+
+
+    function checkNickname()
+    {
+        //只简单的判断昵称的长度
+        var id = document.getElementById("inputNickname3");
+        var nickname=id.value;
+        if(nickname.replace(/[^\x00-\xff]/g,"**").length > 15 ) {
+            document.getElementById("warning2").innerHTML = "输入的用户名过长";
+        }
+        else{
+            document.getElementById("warning").innerHTML = "   ";
+        }
+    }
+
+    function checkUsername() {
+        var username = document.getElementById("inputUsername3").value;
+//        if( username == "" || username == null ){
+//            alert( "请先填写用户名！" );
+//            return false;
+//        }
+        switch( isUsername( username ) ){
+            case 0: break;
+            case 1: {
+                changeUsernamePrompt( "格式不正确，用户名不能以数字开头" );
+                return false;
+            }
+            case 2: {
+                changeUsernamePrompt( '字符长度有误，合法长度为6-20个字符" );
+                return false;
+            }
+            case 3: {
+                changeUsernamePrompt( "含有非法字符，用户名只能包含_,英文字母，数字" );
+                return false;
+            }
+            case 4: {
+                changeUsernamePrompt("格式不正确，用户名只能包含_,英文字母，数字" );
+                return false;
+            }
+        }
+        document.getElementById("warning").innerHTML = "   ";
+    }
+    function changeUsernamePrompt(cnt){
+        document.getElementById( "warning3" ).innerHTML = cnt;
+        document.getElementById( "warning3" ).style.display = "";
+    }
+    function isUsername( username ){
+        if( /^\d.*$/.test( username ) ){
+            return 1;
+        }
+        if(! /^.{6,20}$/.test( username ) ){
+            return 2;
+        }
+        if(! /^[\w_]*$/.test( username ) ){
+            return 3;
+        }
+        if(! /^([a-z]|[A-Z])[\w_]{5,19}$/.test( username ) ){
+            return 4;
+        }
+        return 0;
+    }
+
+
 </script>
 </body>
 </html>
