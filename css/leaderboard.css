@@ -1,5 +1,6 @@
-.avatar{
-    text-align: center;
+.score{
+    text-align:right;
+    padding-right: 30px;
 }
 .number-top{
     font-size: 45px;
@@ -11,20 +12,23 @@
 .suffix-top{
     font-size: 20px;
     color: #f0ad4e;
+    padding-left: 0px;
+    padding-top: 7px;
 }
 .suffix{
     font-size: 20px;
     color: #737373;
+    padding-left: 0px;
+    padding-top: 7px;
 }
-.name-top{
-    color: #d58512;
-    font-weight: bold;
-}
-.panel-body-top{
-    background-color:#f5e79e;
-    color:#d58512;
 
-}
 .panel-body{
     color: #3c3c3c;
+}
+.position{
+    text-align: right;
+    padding-right: 0px;
+}
+.label-list{
+    padding-top: 11px;
 }
