@@ -98,7 +98,7 @@
             document.getElementById("warning2").innerHTML = "输入的用户名过长";
         }
         else{
-            document.getElementById("warning").innerHTML = "   ";
+            document.getElementById("warning2").innerHTML = "   ";
         }
     }
 
@@ -115,7 +115,7 @@
                 return false;
             }
             case 2: {
-                changeUsernamePrompt( '字符长度有误，合法长度为6-20个字符" );
+                changeUsernamePrompt( "字符长度有误，合法长度为6-20个字符" );
                 return false;
             }
             case 3: {
@@ -127,7 +127,8 @@
                 return false;
             }
         }
-        document.getElementById("warning").innerHTML = "   ";
+        document.getElementById("warning3").innerHTML = "   ";
+        return true;
     }
     function changeUsernamePrompt(cnt){
         document.getElementById( "warning3" ).innerHTML = cnt;
@@ -148,8 +149,7 @@
         }
         return 0;
     }
-
-
+    
 </script>
 </body>
 </html>
