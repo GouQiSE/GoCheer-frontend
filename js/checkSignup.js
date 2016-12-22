@@ -8,6 +8,7 @@ var confirmError=false;
 var nickNmeError=false;
 var emailError=false;
 
+
 function check() {
     if (document.getElementById("inputPassword3").value !=
         document.getElementById("inputConfirm3").value) {
@@ -75,6 +76,13 @@ function checkUsername() {
             //document.getElementById("signupButton").disabled=true;
             return false;
         }
+        case 5:{
+            changeUsernamePrompt("该用户名已被占用 " );
+            userNameError=true;
+            checkForButton();
+            //document.getElementById("signupButton").disabled=true;
+            return false;
+        }
     }
     document.getElementById("warning3").innerHTML = "   ";
     userNameError=false;
@@ -98,6 +106,10 @@ function isUsername( username ){
     if(! /^([a-z]|[A-Z])[\w_]{5,19}$/.test( username ) ){
         return 4;
     }
+    if(!sendRequest(username)){
+       return 5;
+    }
+
     return 0;
 }
 
@@ -176,3 +188,47 @@ function checkForButton(){
         document.getElementById("signupButton").disabled=true;
     }
 }
+
+function sendRequest(username){
+    //var username=document.getElementById("inputUsername3").value;
+
+    /*var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://gocheer.donggu.me/checkUsername?username="+username,
+        "method": "GET",
+        "headers": {
+            "cache-control": "no-cache",
+            "postman-token": "c973a20a-9f0d-db25-5010-4ccdd5177489"
+        }
+    }
+
+    $.ajax(settings).done(function (response) {
+        var obj=eval(response);
+        if(obj==true){
+            document.getElementById("warning3").innerHTML=" ";
+        }
+        else{
+            document.getElementById("warning3").innerHTML="该用户名已被占用";
+        }
+    });*/
+    var XMLHttpReq=new XMLHttpRequest();
+    var hasUsed;
+    XMLHttpReq.onreadystatechange=function () {
+        if(XMLHttpReq.readyState==4){
+            if(XMLHttpReq.status==200){
+                hasUsed=XMLHttpReq.responseText;
+            }
+        }
+    }
+    var url="http://gocheer.donggu.me/checkUsername?username="+username;
+    XMLHttpReq.open('GET',url,true);
+    XMLHttpReq.send();
+    if(hasUsed=="false"){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
